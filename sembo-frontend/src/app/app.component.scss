@@ -1,0 +1,63 @@
+:host {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.countries-wrapper {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    .country {
+        margin-bottom: 16px;
+        .country-name {
+            font-weight: bold;
+            font-size: 18px;
+        }
+        .average-score,
+        .top-hotels-title {
+            padding-left: 16px;
+        }
+        .top-three-wrapper {
+            display: flex;
+            flex-direction: row;
+            border-bottom: 2px solid #965F06;
+            .top-hotel {
+                height: 200px;
+                width: 225px;
+                display: flex;
+                flex-direction: column;
+                align-content: flex-end;
+                margin: 0 8px;
+                .position {
+                    height: 50px;
+                    background-image: url('../assets/top1.png');
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                }
+                .info {
+                    flex: 1;
+                    border-top-left-radius: 8px;
+                    border-top-right-radius: 8px;
+                    text-align: center;
+                    background: -moz-linear-gradient( top, #ffcb69 0%, #f0a733 50%, #f2a324 92%, #ffb730);
+                    background: -webkit-gradient( linear, left top, left bottom, from(#ffcb69), color-stop(0.50, #f0a733), color-stop(0.92, #f2a324), to(#ffb730));
+                    border: 1px solid #965F06;
+                    box-shadow: 0px 1px 1px rgba(000, 000, 000, 0.5), inset 1px 2px 0px rgba(255, 255, 255, 0.4);
+                    text-shadow: 1px 1px 2px rgba(000, 000, 000, 0.7), 0px 1px 0px rgba(255, 255, 255, 0.4);
+                }
+            }
+            .top-hotel:first-child {
+                .position {
+                    margin-top: 55px;
+                    background-image: url('../assets/top2.png');
+                }
+            }
+            .top-hotel:last-child {
+                .position {
+                    margin-top: 100px;
+                    background-image: url('../assets/top3.png');
+                }
+            }
+        }
+    }
+}

@@ -12,8 +12,7 @@ app.use('/', express.static('../sembo-frontend/dist/sembo-frontend'));
 app.use(express.json());
 app.use(cors());
 app.listen(appPort, () => {
-    console.log("Starting server...");
-    console.log(`Connect to http://localhost:${appPort} to view the WebApp.`);
+    console.log(`Starting server... Connect to http://localhost:${appPort} to view the WebApp.`);
 });
 
 // Main Sembo's API url
@@ -23,6 +22,7 @@ const apiKey = '3ce85e9273a5444928b5446c54c8139708707218';
 // Endpoint to be fetched, replace {iso} with it, es or fr
 const apiCall = '/sembo/hotels-test/countries/{iso}/hotels';
 
+// List of countries to be fetched from Sembo's API, iso country code (key) will be used for the request call
 const countries = {
     ES: 'Spain (es)',
     IT: 'Italy (it)',
@@ -52,8 +52,8 @@ app.get('/RetrieveHotelsData', function(req, res) {
         };
         request(options, function(error, response, body) {
             if (!error && response.statusCode == 200) {
-                console.log(`Data retrieved after ${response.attempts} attemps...`);
                 const jsonBody = JSON.parse(body);
+                console.log(`Data retrieved for ${jsonBody[0].isoCountryId} after ${response.attempts} attemps...`);
                 const responseData = computeHotelsData(jsonBody);
                 callback(null, responseData);
             } else {

@@ -1,20 +1,28 @@
 import { HttpClient } from '@angular/common/http';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { HotelsRatingPerCountry } from './hotels-rating.models';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
 
-  public response: any;
+  public countryList!: HotelsRatingPerCountry[];
+
+  public loading: boolean = true;
 
   constructor(private _http: HttpClient) {
-    this._http.get('http://localhost:3000/RetrieveHotelsData').subscribe(
-      (response) => {
-        this.response = response;
+    
+  }
+
+  public ngOnInit() {
+    this._http.get<HotelsRatingPerCountry[]>('http://localhost:3000/RetrieveHotelsData').subscribe(
+      (response: HotelsRatingPerCountry[]) => {
+        this.countryList = response;
+        this.loading = false;
       }
-    )
+    );
   }
 }
