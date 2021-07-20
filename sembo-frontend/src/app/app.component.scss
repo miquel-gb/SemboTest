@@ -1,5 +1,6 @@
 :host {
     font-family: Arial, Helvetica, sans-serif;
+    background-color: #E6E6E6;
 }
 
 .countries-wrapper {
@@ -15,11 +16,13 @@
         .average-score,
         .top-hotels-title {
             padding-left: 16px;
+            font-size: 18px;
+            padding-top: 12px;
         }
         .top-three-wrapper {
             display: flex;
             flex-direction: row;
-            border-bottom: 2px solid #965F06;
+            border-bottom: 2px solid black;
             .top-hotel {
                 height: 200px;
                 width: 225px;
@@ -35,6 +38,8 @@
                     background-size: contain;
                 }
                 .info {
+                    color: white;
+                    padding: 5px;
                     flex: 1;
                     border-top-left-radius: 8px;
                     border-top-right-radius: 8px;
@@ -60,4 +65,33 @@
             }
         }
     }
+}
+
+.loading {
+    text-align: center;
+    padding: 40px;
+.loading-spinner {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+  }
+  .loading-spinner:after {
+    content: " ";
+    display: block;
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    border-radius: 50%;
+    border: 6px solid #000;
+    border-color: #000 transparent #000 transparent;
+    animation: loading-spinner 1.2s linear infinite;
+  }
+  @keyframes loading-spinner {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
 }

@@ -127,5 +127,8 @@
       }
     }
   },
-  "defaultProject": "sembo-frontend"
+  "defaultProject": "sembo-frontend",
+  "cli": {
+    "analytics": false
+  }
 }

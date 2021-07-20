@@ -2,7 +2,7 @@
     <div class="country" *ngFor="let country of countryList">
         <div class="country-name">Hotels in {{country.country}}</div>
         <div class="average-score">Average score: {{country.averageScore}}</div>
-        <div class="top-hotels-title">Top 3 hotels</div>
+        <!-- <div class="top-hotels-title">Top 3 hotels</div> -->
         <div class="top-three-wrapper">
             <div class="top-hotel" *ngFor="let hotel of country.topThreeHotels">
                 <div class="position"></div>
@@ -15,5 +15,5 @@
 </div>
 
 <div class="loading" *ngIf="loading">
-    LOADING
+    <div class="loading-spinner"></div>
 </div>
