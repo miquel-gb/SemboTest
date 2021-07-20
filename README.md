@@ -2,7 +2,7 @@
 It's required to build a server app that retrieves hotels info per country from Sembo's API and returns this data computed into an average score for each country and the three highest rated hotels. This data will be displayed in an easy web application that will require no interaction with the user, will only load the data and display it.
 
 ### Technologies
-Dince I'm mainly a frontend developer I've chosen to use **NodeJS** for the server application, since it's use will be easier for me, and the web application will be built using a little **Angular** app.
+Since I'm mainly a frontend developer I've chosen to use **NodeJS** for the server application, since it's use will be easier for me, and the web application will be built using a little **Angular** app.
 
 The **NodeJS** server will be hosting the built files from the web application aswell as the endpoint needed to retrieve computed data.
 
@@ -10,7 +10,7 @@ The **NodeJS** server will be hosting the built files from the web application a
 
 The server application will be a **NodeJS** app using **express** package to easily run a web server and serve the frontend files and the API, for the API it'll use **requestretry** package to retrieve the data from Sembo's API (due to the 75% fail ratio) and **async** package to start trying to retrieve the data for all countries at once.
 
-Once the server is run (by running the provided script) or by running **node index.js** inside **node-server** folder, the app will be hosted at _http://localhost:3000_, this port can be changed at index.js file by modifying _appport_ const.
+Once the server is run (by running the provided script) or by running **node index.js** inside **node-server** folder, the app will be hosted at _http://localhost:3000_, this port can be changed at index.js file by modifying _appPort_ const.
 
 **Notes:** For the server application I was thinking that maybe it was a good idea to cache in some way the data because of the fail ratio of the API, but I decided to not do it so the data displayed to the user will always be truthy.
 
